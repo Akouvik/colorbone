@@ -6,7 +6,7 @@ google sign in btn
 import './button.styles.scss';
 
 const BUTTON_TYPE_CLASSES = {
-  google: 'googel-sign-in',
+  google: 'google-sign-in',
   inverted: 'inverted',
 };
 const Button = ({ children, buttonType, ...otherProps }) => {
