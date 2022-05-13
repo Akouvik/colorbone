@@ -1,16 +1,13 @@
 import { useState } from 'react';
+import FormInput from '../form-input/form-input.component';
+import Button from '../button/button.component';
 import {
   createAuthUserWithEmailAndPassword,
   siginInUserWithEmailAndPassword,
   createUserDocumentFromAuth,
   signInWithGooglePopup,
 } from '../../utils/firebase/firebase.utils';
-
-import FormInput from '../form-input/form-input.component';
 import './sign-in-form.styles.scss';
-// import '../sign-up-form/sign-up-form.styles.scss';
-
-import Button from '../button/button.component';
 
 const defaultFormFields = {
   email: '',
@@ -19,19 +16,18 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
   const SignInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
+    // creates a user document in firebase firestore
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await siginInUserWithEmailAndPassword(email, password);
+      const { user } = await siginInUserWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -64,6 +60,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
+          autoComplete="on"
         />
 
         <FormInput
@@ -73,6 +70,7 @@ const SignInForm = () => {
           onChange={handleChange}
           name="password"
           value={password}
+          autoComplete="on"
         />
         <div className="buttons-container">
           <Button type="submit">Sign in</Button>

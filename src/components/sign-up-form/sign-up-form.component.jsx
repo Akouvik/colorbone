@@ -4,8 +4,8 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
-import './sign-up-form.styles.scss';
 import Button from '../button/button.component';
+import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
   displayName: '',
@@ -35,6 +35,7 @@ const SignUpForm = () => {
         email,
         password
       );
+      // creating a user document with the user auth that we get back
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -63,6 +64,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="displayName"
           value={displayName}
+          autoComplete="on"
         />
 
         <FormInput
@@ -72,6 +74,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="email"
           value={email}
+          autoComplete="on"
         />
 
         <FormInput
@@ -81,6 +84,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="password"
           value={password}
+          autoComplete="on"
         />
 
         <FormInput
@@ -90,6 +94,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           name="confirmPassword"
           value={confirmPassword}
+          autoComplete="on"
         />
 
         <Button type="submit">Submit</Button>
