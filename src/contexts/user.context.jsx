@@ -12,7 +12,10 @@ export const UserContext = createContext({
 // this is the component
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
+  const [currentProduct, setCurrentProduct] = useState({});
+  const product = { currentProduct, setCurrentProduct };
   const value = { currentUser, setCurrentUser };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
       if (user) {
@@ -23,5 +26,9 @@ export const UserProvider = ({ children }) => {
     // unsubscribe whenever you unmount
     return unsubscribe;
   }, []);
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={value} product={product}>
+      {children}
+    </UserContext.Provider>
+  );
 };
