@@ -8,6 +8,7 @@ import { UserProvider } from '../src/contexts/user.context';
 import { ProductProvider } from '../src/contexts/products.context';
 import { CartProvider } from '../src/contexts/cart.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
