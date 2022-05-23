@@ -1,0 +1,60 @@
+.big-image {
+  height: 70vh;
+  position: relative;
+  top: -20px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('https://i.ibb.co/v1cvwNf/yellow-track-suit.png');
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    span {
+      margin-bottom: 80px;
+    }
+    h1 {
+      font-size: 65px;
+      letter-spacing: 0px;
+      margin: -180px 0px 5px;
+    }
+    p {
+      display: flex;
+      margin: 0;
+      font-size: 28px;
+    }
+  }
+}
+
+#vids {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px;
+  h3 {
+    width: 70%;
+    text-align: center;
+  }
+  p {
+    text-decoration: underline;
+    text-underline-offset: 20%;
+    margin-top: 0;
+    .arrow {
+      margin-left: 12px;
+      font-size: 30px;
+      padding-top: 12px;
+    }
+  }
+}
+
+#vids a:first-of-type {
+  margin-bottom: 5px;
+}

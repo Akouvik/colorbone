@@ -6,6 +6,7 @@ import { CartContext } from '../../contexts/cart.context';
 import { SignOutUser } from '../../utils/firebase/firebase.utils';
 import CartIcon from '../../components/cart-icon/cart-icon.component';
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
+import Footer from '../../components/footer/footer.component';
 import './navigation.styles.scss';
 
 const Navigation = () => {
@@ -35,6 +36,7 @@ const Navigation = () => {
         {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
+      <Footer />
     </Fragment>
   );
 };
