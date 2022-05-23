@@ -9,17 +9,19 @@ const Category = () => {
   const { categoriesMap } = useContext(CategoriesContext);
 
   const [products, setProducts] = useState(categoriesMap[category]);
+  const [categoryName, setCategoryName] = useState('');
 
   useEffect(() => {
     const findCat = Object.keys(categoriesMap).find((currCategory) => {
       return currCategory.replace(/ /g, '') === category;
     });
+    setCategoryName(findCat);
     setProducts(categoriesMap[findCat]);
   }, [category, categoriesMap]);
 
   return (
     <Fragment>
-      <h2 className="category-title">{category.toUpperCase()}</h2>
+      <h2 className="category-title">{categoryName.toUpperCase()}</h2>
 
       <div className="category-container">
         {products &&
