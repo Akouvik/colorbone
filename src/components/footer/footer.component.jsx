@@ -1,15 +1,38 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import SectionNavigation from './section-navigation/section-navigation.component';
+import Facebook from '@material-ui/icons/Facebook';
+import Twitter from '@material-ui/icons/Twitter';
+import Instagram from '@material-ui/icons/Instagram';
+import LinkedIn from '@material-ui/icons/LinkedIn';
+import GitHub from '@material-ui/icons/GitHub';
+
 import './footer.styles.scss';
 
 const Footer = () => {
   return (
     <Fragment>
-      <section>Footer Example 4</section>
+      <section className="footer-section">
+        <div className="footer-icons">
+          <Link to="/">
+            <Instagram className="social-media instagram" />
+          </Link>
+          <Link to="/">
+            <Twitter className="social-media twitter" />
+          </Link>
+          <Link to="/">
+            <LinkedIn className="social-media linkedin" />
+          </Link>
+          <Link to="/">
+            <GitHub className="social-media github" />
+          </Link>
+        </div>
+        <SectionNavigation />
+      </section>
       <div className="footer-distributed">
         <div className="footer-left">
           <h3>
-            Colorbone<span>logo</span>
+            <span>Colorbone</span>
           </h3>
 
           <p className="footer-links">
@@ -18,12 +41,8 @@ const Footer = () => {
             </Link>
 
             <Link to="/shop">SHOP</Link>
-
-            <Link to="/home">ABOUT</Link>
-
-            <Link to="/home">FAQ</Link>
-
-            <Link to="/home">CONTACT</Link>
+            <Link to="/">ABOUT</Link>
+            <Link to="#">CONTACT</Link>
           </p>
           <p className="footer-company-name">Colorbone.io© 2022</p>
         </div>
@@ -32,19 +51,19 @@ const Footer = () => {
           <div>
             <i className="fa fa-map-marker"></i>
             <p>
-              <span>444 S. Cedros Ave</span> Solana Beach, California
+              <span>144 N. Bedford Ave</span> Williamsberg Brooklyn, New York
             </p>
           </div>
 
           <div>
             <i className="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
+            <p>+1.646.926.6082‬</p>
           </div>
 
           <div>
             <i className="fa fa-envelope"></i>
             <p>
-              <Link to="">support@company.com</Link>
+              <Link to="">support@colorbone.com</Link>
             </p>
           </div>
         </div>
@@ -52,24 +71,9 @@ const Footer = () => {
         <div className="footer-right">
           <p className="footer-company-about">
             <span>About the company</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce
-            euismod convallis velit, eu auctor lacus vehicula sit amet.
+            Color your bone by finding comfort, pleasure, and warmth in your
+            surrounding.
           </p>
-
-          <div className="footer-icons">
-            <Link to="/">
-              <i className="fa fa-facebook"></i>
-            </Link>
-            <Link to="/">
-              <i className="fa fa-twitter"></i>
-            </Link>
-            <Link to="/">
-              <i className="fa fa-linkedin"></i>
-            </Link>
-            <Link to="/">
-              <i className="fa fa-github"></i>
-            </Link>
-          </div>
         </div>
       </div>
     </Fragment>

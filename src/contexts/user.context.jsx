@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-
+import { useLocation } from 'react-router';
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
@@ -13,6 +13,10 @@ export const UserContext = createContext({
 export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const value = { currentUser, setCurrentUser };
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {

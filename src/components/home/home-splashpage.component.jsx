@@ -11,7 +11,7 @@ const SplashPage = () => {
     <Fragment>
       <div className="big-image">
         <div className="overlay">
-          <h1>Hero Image With Overlay</h1>
+          <h1>COLORBONE</h1>
           <span>A full width background image built with HTML & CSS.</span>
           <Button onClick={goToShop}>SHOP NOW</Button>
         </div>
@@ -25,7 +25,7 @@ const SplashPage = () => {
         <Link to="#">
           <p>
             Find out More
-            <ArrowForwardIcon className="arrow"></ArrowForwardIcon>
+            <ArrowForwardIcon className="arrow" />
           </p>
         </Link>
       </div>
