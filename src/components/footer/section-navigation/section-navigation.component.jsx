@@ -13,6 +13,9 @@ const SectionNavigation = () => {
     <div className="float">
       <ul className="section-navigation-ul">
         {SHOP_DATA.map(({ title }) => {
+          if (title === 'Healing Crystals') {
+            title = 'Home Decor';
+          }
           return (
             <li
               className="section-navigation-list"

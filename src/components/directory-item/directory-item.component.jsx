@@ -15,8 +15,8 @@ const DirectoryItem = ({ category, categoryProducts }) => {
 
   return (
     <Fragment>
-      <div class="image-one">
-        <div class="caption">
+      <div className="image-one">
+        <div className="caption">
           <span>First heading</span>
         </div>
       </div>
