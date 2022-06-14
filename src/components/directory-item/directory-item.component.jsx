@@ -15,21 +15,26 @@ const DirectoryItem = ({ category, categoryProducts }) => {
 
   return (
     <Fragment>
+      <div class="image-one">
+        <div class="caption">
+          <span>First heading</span>
+        </div>
+      </div>
       <div className="directory-item-container" onClick={onNavigateHandler}>
-        {title == 'Dried Florals' && (
+        {title === 'Dried Florals' && (
           <p>Shop Our curated selection of aromatic Dried Florals</p>
         )}
         <div
           className="background-image"
           style={{ backgroundImage: `url(${imageUrl})` }}
         />
-        {title == 'Healing Crystals' && (
+        {title === 'Healing Crystals' && (
           <p>
             Much Like the body and mind, the soul requires constant recharge
           </p>
         )}
         <div className="body">
-          {title == 'Herbs and Tea' ? (
+          {title === 'Herbs and Tea' ? (
             <HerbsAndTeaComponent />
           ) : (
             <>

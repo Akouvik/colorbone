@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <div>
       <SplashPage />
-      {/* <Directory categories={categories} />; */}
       <Directory />;
     </div>
   );

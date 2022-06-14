@@ -130,7 +130,7 @@ const SHOP_DATA = [
     ],
   },
   {
-    title: 'Home Decor',
+    title: 'Healing Crystals',
     items: [
       {
         id: 18,
